@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Read() {
     const [APIData, setAPIData] = useState([]);
+
     useEffect(() => {
         axios.get(`https://635d13c0fc2595be26525b39.mockapi.io/fakeData`)
         .then((response) => {
@@ -33,7 +34,6 @@ export default function Read() {
             getData();
         })
     }
-    
     return (
         <div>
             <Table singleLine>

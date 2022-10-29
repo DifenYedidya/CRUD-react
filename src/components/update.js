@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 export default function Update() {
+    let navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
@@ -20,6 +22,8 @@ export default function Update() {
             firstName,
              lastName,
              checkbox
+        }).then(() => {
+            navigate.push('/read')
         })
     }
     return (

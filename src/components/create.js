@@ -1,16 +1,22 @@
 import React, {useState} from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 export default function Create() {
+    let navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
+
+    //navigate.push function to push to the Read page just after the post API gets called.
     const postData = () => {
         axios.post(`https://635d13c0fc2595be26525b39.mockapi.io/fakeData`, {
             firstName,
             lastName,
             checkbox
+        }).then(() => {
+            navigate.push('/read')
         })
     }
     return (
