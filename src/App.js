@@ -18,6 +18,7 @@ function App() {
           <h2>Go to</h2>
           <Link to='/create'><h3>create page</h3></Link>
           <Link to='/read'><h3>read page</h3></Link>
+          <Link to='/update'><h3>update page</h3></Link>
         </div>
       </div>
     </Router>
